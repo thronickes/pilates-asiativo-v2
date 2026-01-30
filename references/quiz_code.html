@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Pilates Personalizado</title>
+    <link rel="stylesheet" href="quiz_style.css">
+</head>
+<body>
+
+<div id="quiz-container">
+    <div class="progress-bar"><div class="progress" id="progress"></div></div>
+    
+    <!-- Etapa 1 -->
+    <div class="step active" id="step1">
+        <img src="https://s3.harna-app.com/quizes_images/9a7f38c9-8e74-41fb-83e7-cc5711f5ef86.png" alt="Pilates">
+        <h2>Qual é a sua idade?</h2>
+        <button class="option" onclick="nextStep(2)">39-45</button>
+        <button class="option" onclick="nextStep(2)">46-50</button>
+        <button class="option" onclick="nextStep(2)">51-60</button>
+        <button class="option" onclick="nextStep(2)">60+</button>
+    </div>
+
+    <!-- Etapa 2 -->
+    <div class="step" id="step2">
+        <h2>Qual seu objetivo principal?</h2>
+        <button class="option" onclick="nextStep(3)">Perder peso</button>
+        <button class="option" onclick="nextStep(3)">Ficar em forma</button>
+        <button class="option" onclick="nextStep(3)">Melhorar flexibilidade</button>
+    </div>
+
+    <!-- Etapa 3 (E-mail) -->
+    <div class="step" id="step3">
+        <h2>Quase lá! Digite seu e-mail</h2>
+        <input type="email" id="email" placeholder="Seu melhor e-mail">
+        <button class="next" onclick="validateEmail()">Continuar</button>
+    </div>
+
+    <!-- Etapa 4 (Nome) -->
+    <div class="step" id="step4">
+        <h2>Como podemos te chamar?</h2>
+        <input type="text" id="name" placeholder="Seu nome">
+        <button class="next" onclick="finishQuiz()">Ver meu plano</button>
+    </div>
+
+    <!-- Final -->
+    <div class="step" id="step5">
+        <h2>Parabéns!</h2>
+        <p id="result-text"></p>
+        <button class="next" onclick="location.reload()">Recomeçar</button>
+    </div>
+</div>
+
+<script>
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    function updateProgress() {
+        const percent = ((currentStep - 1) / totalSteps) * 100;
+        document.getElementById('progress').style.width = percent + '%';
+    }
+
+    function nextStep(step) {
+        document.getElementById('step' + currentStep).classList.remove('active');
+        currentStep = step;
+        document.getElementById('step' + currentStep).classList.add('active');
+        updateProgress();
+    }
+
+    function validateEmail() {
+        const email = document.getElementById('email').value;
+        if(email.includes('@')) {
+            nextStep(4);
+        } else {
+            alert('Por favor, insira um e-mail válido.');
+        }
+    }
+
+    function finishQuiz() {
+        const name = document.getElementById('name').value;
+        document.getElementById('step4').classList.remove('active');
+        document.getElementById('step5').classList.add('active');
+        document.getElementById('result-text').innerText = 'Olá ' + name + ', seu plano personalizado de Pilates está sendo gerado e será enviado para o seu e-mail!';
+        document.getElementById('progress').style.width = '100%';
+    }
+</script>
+
+</body>
+</html>

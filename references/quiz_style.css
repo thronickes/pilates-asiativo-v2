@@ -1,0 +1,155 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Container do Quiz */
+#quiz-container {
+    background: #ffffff;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Barra de Progresso */
+.progress-bar {
+    height: 6px;
+    background: #f0f0f0;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #d63384, #ff4d94);
+    width: 0%;
+    transition: width 0.4s ease-in-out;
+}
+
+/* Etapas */
+.step {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Títulos e Textos */
+h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Opções de Resposta */
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px 20px;
+    margin: 12px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.05rem;
+    background: #fff;
+    text-align: left;
+    font-weight: 500;
+    color: #444;
+}
+
+.option:hover {
+    border-color: #d63384;
+    background-color: #fff9fb;
+    transform: scale(1.02);
+}
+
+.option::after {
+    content: '→';
+    color: #d63384;
+    font-weight: bold;
+}
+
+/* Inputs de Texto e Email */
+input[type="text"], 
+input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus {
+    outline: none;
+    border-color: #d63384;
+}
+
+/* Botão de Ação */
+button.next {
+    background-color: #d63384;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.3);
+    transition: background 0.3s;
+}
+
+button.next:hover {
+    background-color: #b82a6f;
+}
+
+/* Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    #quiz-container {
+        padding: 20px 15px;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+}
