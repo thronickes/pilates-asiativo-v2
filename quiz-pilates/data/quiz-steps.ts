@@ -333,13 +333,13 @@ export const quizSteps: QuizStep[] = [
         options: [
             {
                 id: 'calm',
-                label: 'Calmo e relaxado',
+                label: 'Caseiro',
                 description: 'Principalmente em casa, desfrutando de um ritmo mais lento e calmo',
                 image: 'https://s3.harna-app.com/quizes_images/92068a4c-76ea-4cc4-9b88-7e4d398834f4.png'
             },
             {
                 id: 'family',
-                label: 'Casa e filhos',
+                label: 'Focado na família',
                 description: 'Cuidando da família e permanecendo moderadamente ativo',
                 image: 'https://s3.harna-app.com/quizes_images/138d10c5-cf1c-4d47-a450-48d2fd4c8fa4.png'
             },

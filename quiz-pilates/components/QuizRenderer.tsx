@@ -29,6 +29,17 @@ export default function QuizRenderer() {
     });
     const [percentage, setPercentage] = useState(0);
 
+    const getAnswerLabel = (stepId: number) => {
+        const answerId = answers[stepId];
+        if (!answerId || typeof answerId !== 'string') return '';
+
+        const step = quizSteps.find(s => s.id === stepId);
+        const option = step?.options?.find(opt => opt.id === answerId);
+
+        // Remover emoji do label se houver (ex: 🏋️ Perder peso -> Perder peso)
+        return option?.label.replace(/[\u{1F300}-\u{1F9FF}]/gu, '').replace(/[^\x00-\x7F]/g, '').trim() || option?.label || '';
+    };
+
     useEffect(() => {
         if (step?.type === 'processing') {
             setPercentage(0);
@@ -655,7 +666,7 @@ export default function QuizRenderer() {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Objetivo principal</p>
-                                        <p className="font-bold text-[#d63384]">Perder peso</p>
+                                        <p className="font-bold text-[#d63384]">{getAnswerLabel(3) || 'Perder peso'}</p>
                                     </div>
                                 </div>
 
@@ -665,7 +676,7 @@ export default function QuizRenderer() {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Estilo de vida</p>
-                                        <p className="font-bold text-gray-800">Caseiro</p>
+                                        <p className="font-bold text-gray-800">{getAnswerLabel(20) || 'Caseiro'}</p>
                                     </div>
                                 </div>
 
@@ -675,7 +686,7 @@ export default function QuizRenderer() {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Tipo de corpo</p>
-                                        <p className="font-bold text-gray-800">Sólido e sutilmente arredondado</p>
+                                        <p className="font-bold text-gray-800">{getAnswerLabel(7) || 'Sólido e sutilmente arredondado'}</p>
                                     </div>
                                 </div>
                             </div>
