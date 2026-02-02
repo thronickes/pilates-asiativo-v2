@@ -67,11 +67,11 @@ export default function CheckoutStep({ biometric, onContinue }: CheckoutStepProp
                 {/* Pricing Cards */}
                 <div className="px-4 space-y-4 mb-8">
                     {/* Single Offer Card */}
-                    <div className="border-2 border-[#d63384] bg-[#fff9fb] rounded-2xl p-6 relative shadow-lg scale-[1.02]">
-                        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#d63384] text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <div className="border-2 border-[#d63384] bg-[#fff9fb] rounded-2xl p-6 relative shadow-lg scale-[1.02] mt-6">
+                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d63384] text-white px-6 py-2 rounded-full text-sm font-bold shadow-md whitespace-nowrap z-10">
                             OFERTA EXCLUSIVA
                         </div>
-                        <div className="text-center">
+                        <div className="text-center pt-4">
                             <h3 className="font-bold text-xl mb-4 text-gray-800">Plano Completo</h3>
                             <div className="mb-4">
                                 <span className="text-red-500 line-through text-lg block mb-1">R$ 87,90</span>
@@ -81,6 +81,12 @@ export default function CheckoutStep({ biometric, onContinue }: CheckoutStepProp
                             <p className="text-xs text-green-600 font-bold mb-0">✓ Acesso Imediato e Vitalício</p>
                         </div>
                     </div>
+                </div>
+
+                <div className="px-4 mb-8">
+                    <p className="text-[#d63384] font-bold text-sm bg-[#fff0f6] py-2 px-4 rounded-lg inline-block">
+                        ⚠️ O valor promocional se encerra hoje dia {new Date().toLocaleDateString('pt-BR')}
+                    </p>
                 </div>
 
                 <div className="px-4">

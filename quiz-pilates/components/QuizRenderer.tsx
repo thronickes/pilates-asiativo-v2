@@ -992,7 +992,7 @@ export default function QuizRenderer() {
             {step.type === 'checkout' && (
                 <CheckoutStep
                     biometric={biometric}
-                    onContinue={() => window.location.href = 'https://pagamento-seguro.lifehealth.living/checkout/v5/TBjB3xn07YzBVppAfO0u'}
+                    onContinue={() => window.location.href = 'https://pagamento-seguro.lifehealth.living/checkout/v4/TBjB3xn07YzBVppAfO0u'}
                 />
             )}
         </StepContainer>
