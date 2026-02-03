@@ -36,8 +36,14 @@ export default function QuizRenderer() {
         const step = quizSteps.find(s => s.id === stepId);
         const option = step?.options?.find(opt => opt.id === answerId);
 
-        // Remover emoji do label se houver (ex: 🏋️ Perder peso -> Perder peso)
-        return option?.label.replace(/[\u{1F300}-\u{1F9FF}]/gu, '').replace(/[^\x00-\x7F]/g, '').trim() || option?.label || '';
+        if (!option) return '';
+
+        // Remover apenas emojis, preservando acentos portugueses
+        const cleanLabel = option.label.replace(/[\u{1F300}-\u{1F9FF}]/gu, '').trim();
+
+        console.log(`Debug Resumo - Passo ${stepId}:`, { answerId, rawLabel: option.label, cleanLabel });
+
+        return cleanLabel || option.label;
     };
 
     useEffect(() => {

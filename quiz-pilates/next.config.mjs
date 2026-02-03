@@ -10,6 +10,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'pilates.harnafit.com',
             },
+            {
+                protocol: 'https',
+                hostname: 'unimeal.com',
+            },
         ],
     },
     output: 'standalone',

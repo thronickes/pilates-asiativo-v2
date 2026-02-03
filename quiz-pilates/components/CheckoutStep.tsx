@@ -64,6 +64,61 @@ export default function CheckoutStep({ biometric, onContinue }: CheckoutStepProp
                     Seu plano de Pilates Asiático está pronto!
                 </h2>
 
+                {/* New Testimonials Section: Before Prices */}
+                <div className="px-4 mb-10">
+                    <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">Resultados que nos orgulham</h3>
+                    <div className="flex overflow-x-auto gap-4 pb-4 snap-x hide-scrollbar -mx-4 px-4">
+                        {[
+                            {
+                                name: "Mariana",
+                                age: 38,
+                                img: "https://unimeal.com/_next/image?url=%2F_next%2Fstatic%2Fassets%2FsDSsYc5qO3SaCVNN3r5_m%2Fimages%2Ffinal%2Fai-slider%2Fwoman1.png&w=296&q=75",
+                                text: "Eliminei o inchaço e a gordura localizada. Perdi 19kg e me sinto maravilhosa.",
+                                color: "bg-blue-500",
+                                initial: "M"
+                            },
+                            {
+                                name: "Geovanna",
+                                age: 33,
+                                img: "https://unimeal.com/_next/image?url=%2F_next%2Fstatic%2Fassets%2FsDSsYc5qO3SaCVNN3r5_m%2Fimages%2Ffinal%2Fai-slider%2Fwoman2.png&w=296&q=75",
+                                text: "Perdi 6kg em menos de uma semana. De longe, o método mais eficaz que já tentei.",
+                                color: "bg-sky-400",
+                                initial: "G"
+                            },
+                            {
+                                name: "Lucinda",
+                                age: 47,
+                                img: "https://unimeal.com/_next/image?url=%2F_next%2Fstatic%2Fassets%2FsDSsYc5qO3SaCVNN3r5_m%2Fimages%2Ffinal%2Fai-slider%2Fwoman3.png&w=296&q=75",
+                                text: "Minha composição corporal melhorou muito; estou mais tonificada e me sentindo mais jovem 😊",
+                                color: "bg-blue-400",
+                                initial: "L"
+                            }
+                        ].map((item, i) => (
+                            <div key={i} className="min-w-[280px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm border border-gray-100 snap-center flex flex-col h-full">
+                                <div className="relative aspect-[4/3] w-full">
+                                    <img src={item.img} alt={`Resultado de ${item.name}`} className="w-full h-full object-cover" />
+                                </div>
+                                <div className="p-5 flex flex-col flex-1">
+                                    <div className="text-[#d63384] mb-3 self-start">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H11V21H14.017ZM5.017 21L5.017 18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H7.017C6.46472 8 6.017 8.44772 6.017 9V12C6.017 12.5523 5.56929 13 5.017 13H2V21H5.017Z" />
+                                        </svg>
+                                    </div>
+                                    <p className="text-sm text-gray-700 font-medium leading-relaxed mb-6 text-left flex-1">
+                                        {item.text}
+                                    </p>
+                                    <div className="flex items-center gap-3">
+                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold ${item.color}`}>
+                                            {item.initial}
+                                        </div>
+                                        <span className="text-sm font-bold text-gray-800">{item.name}, {item.age}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
                 {/* Pricing Cards */}
                 <div className="px-4 space-y-4 mb-8">
                     {/* Single Offer Card */}
