@@ -138,6 +138,17 @@ export default function CheckoutStep({ biometric, onContinue }: CheckoutStepProp
                     </div>
                 </div>
 
+                {/* Sorteio Image */}
+                <div className="px-4 mb-8">
+                    <div className="relative w-full rounded-xl overflow-hidden shadow-sm">
+                        <img
+                            src="/images/sorteio.webp"
+                            alt="Sorteio Exclusivo"
+                            className="w-full h-auto object-cover"
+                        />
+                    </div>
+                </div>
+
                 <div className="px-4 mb-8">
                     <p className="text-[#d63384] font-bold text-sm bg-[#fff0f6] py-2 px-4 rounded-lg inline-block">
                         ⚠️ O valor promocional se encerra hoje dia {new Date().toLocaleDateString('pt-BR')}
