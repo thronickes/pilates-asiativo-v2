@@ -72,7 +72,7 @@ export default function CheckoutStep({ biometric, onContinue }: CheckoutStepProp
                             {
                                 name: "Mariana",
                                 age: 38,
-                                img: "https://unimeal.com/_next/image?url=%2F_next%2Fstatic%2Fassets%2FsDSsYc5qO3SaCVNN3r5_m%2Fimages%2Ffinal%2Fai-slider%2Fwoman1.png&w=296&q=75",
+                                img: "/images/dep1.png",
                                 text: "Eliminei o inchaço e a gordura localizada. Perdi 19kg e me sinto maravilhosa.",
                                 color: "bg-blue-500",
                                 initial: "M"
@@ -80,7 +80,7 @@ export default function CheckoutStep({ biometric, onContinue }: CheckoutStepProp
                             {
                                 name: "Geovanna",
                                 age: 33,
-                                img: "https://unimeal.com/_next/image?url=%2F_next%2Fstatic%2Fassets%2FsDSsYc5qO3SaCVNN3r5_m%2Fimages%2Ffinal%2Fai-slider%2Fwoman2.png&w=296&q=75",
+                                img: "/images/dep3.png",
                                 text: "Perdi 6kg em menos de uma semana. De longe, o método mais eficaz que já tentei.",
                                 color: "bg-sky-400",
                                 initial: "G"
@@ -88,7 +88,7 @@ export default function CheckoutStep({ biometric, onContinue }: CheckoutStepProp
                             {
                                 name: "Lucinda",
                                 age: 47,
-                                img: "https://unimeal.com/_next/image?url=%2F_next%2Fstatic%2Fassets%2FsDSsYc5qO3SaCVNN3r5_m%2Fimages%2Ffinal%2Fai-slider%2Fwoman3.png&w=296&q=75",
+                                img: "/images/dep2.png",
                                 text: "Minha composição corporal melhorou muito; estou mais tonificada e me sentindo mais jovem 😊",
                                 color: "bg-blue-400",
                                 initial: "L"
