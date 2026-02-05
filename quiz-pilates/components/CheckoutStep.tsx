@@ -129,8 +129,8 @@ export default function CheckoutStep({ biometric, onContinue }: CheckoutStepProp
                         <div className="text-center pt-4">
                             <h3 className="font-bold text-xl mb-4 text-gray-800">Plano Completo</h3>
                             <div className="mb-4">
-                                <span className="text-red-500 line-through text-lg block mb-1">R$ 87,90</span>
-                                <span className="text-3xl font-bold text-[#d63384] block mb-1">R$ 19,90</span>
+                                <span className="text-red-500 line-through text-lg block mb-1">R$ 97,00</span>
+                                <span className="text-3xl font-bold text-[#d63384] block mb-1">R$ 29,90</span>
                                 <span className="text-sm font-bold text-gray-500 uppercase tracking-wide bg-gray-100 px-3 py-1 rounded-full">Pagamento único</span>
                             </div>
                             <p className="text-xs text-green-600 font-bold mb-0">✓ Acesso Imediato e Vitalício</p>
